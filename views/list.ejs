@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1><%= today %></h1>
+    <h2>Here is your <%= special %> to-do list:</h2>
+  </div>
+
+  <div class="box">
+    <% newListItems.forEach(function(item){ %>
+    <form action="/delete" method="post">
+      <div class="item">
+      <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%= item._id %>">
+      <p><%= item.name %></p>
+    </div>
+    <input type="hidden" name="listName" value="<%= special %>"></input>
+  </form>
+    <% }); %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newitem" placeholder="Next thang pls" autocomplete="off">
+      <button type="submit" name="list" value="<%= special %>">Send it</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
