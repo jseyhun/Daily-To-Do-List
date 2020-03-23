@@ -14,8 +14,7 @@ const itemsSchema = {
   name: {
     type: String,
     required: [true, "c'mon buddy, gotta have a name"]
-  }
-};
+  }};
 
 const listSchema = {
   name: String,
@@ -112,16 +111,16 @@ app.post('/', function(req, res){
 });
 
 app.post('/delete', function(req, res){
-  const checkedItemID = req.body.checkbox;
+  const checkedItemID = req.body.xButton;
   const listName = req.body.listName;
 
   if(listName == ""){
 
-    Item.findByIdAndRemove(checkedItemID, function(err){
+    Item.deleteOne({_id: checkedItemID}, function(err){
       if(err){
         console.log(err);
       } else {
-        console.log("Item removed");
+        console.log("Item deleted");
         res.redirect('/');
       }
     });

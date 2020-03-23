@@ -27,6 +27,17 @@ h2 {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.deleteButton{
+  background-color: none;
+  font-weight: 200;
+  font-size: 20px;
+  color: #00204a
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+
 #heading {
   background-color: #010a43;
   text-align: center;
@@ -65,7 +76,7 @@ form.item {
   margin-left: 20px;
 }
 
-button {
+.submitButton {
   min-height: 50px;
   width: 100px;
   border-radius: 50%;
